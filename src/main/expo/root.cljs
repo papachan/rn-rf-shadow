@@ -18,7 +18,7 @@
              #js {:componentDidMount
                   (fn []
                     (this-as this
-                             (reset! root-component-ref this)))
+                      (reset! root-component-ref this)))
                   :componentWillUnmount
                   (fn []
                     (reset! root-component-ref nil))
