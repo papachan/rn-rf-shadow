@@ -24,16 +24,6 @@ To install dependencies, and setup the project, run:
 
 From there use your favorite editor and/or the prompt.
 
-## Using VS Code + Calva
-
-Assuming you have installed the [Calva](https://calva.io) extension in VS Code:
-
-### Build and start the app, and connect Calva
-
-1. Open the project in VS Code. Then:
-1. Run the Calva command **Start a Project REPL and Connect (aka Jack-in)**
-   1. Wait for shadow to build the project.
-
 ### Start Expo
 
 1. Then **Run Build Task**. This will start Expo and the Metro
@@ -56,10 +46,9 @@ Open Emacs and a bash shell:
 
 1. Run `npx shadow-cljs compile :app` to perform an initial build of the app.
 1. In Emacs open one of the files in the project (`deps.edn` is fine)
-1. From that buffer, do `cider-jack-in-clojurescript` [C-c M-J] to
+1. From that buffer, do `cider-jack-in-cljs` [C-c M-J] to
    launch a REPL. Follow the series of interactive prompts in the
    minibuffer:
-   1. select `shadow-cljs` as the command to launch
    1. select `shadow` as the repl type
    1. select `:app` as the build to connect
    1. and optionally answer `y` or `n` to the final question about
@@ -68,11 +57,10 @@ Open Emacs and a bash shell:
    running new builds of the app if any files are changed. You'll also
    have a REPL prompt, *however the REPL doesn't work because it isn't
    connected to anything. The app isn't running yet.*
-1. In a shell run `npm run ios` (same as `npx expo start -i`). This starts
-   the Metro bundler, perform the bundling, launch the iPhone
-   simulator, and transmit the bundled app. Be patient at this step as
-   it can take many seconds to complete. When the app is finally
-   running expo will display the message:
+1. In a shell run `npx expo start --web`. This starts the Metro bundler,
+   perform the bundling, and transmit the bundled app. Be patient at
+   this step as it can take many seconds to complete. When the app is
+   finally running expo will display the message:
 
        WebSocket connected!
        REPL init successful
@@ -83,17 +71,6 @@ Open Emacs and a bash shell:
    ```
    Which should pop-up a modal alert in the simulator, confirming the
    app is running and the REPL is connected end to end.
-
-## Using IntelliJ + Cursive REPL
-
-1. Follow the instructions specified in [Or the Command line](#or-the-command-line).
-2. Create a Maven POM using `shadow-cljs pom`, as described in the [Shadow doc](https://shadow-cljs.github.io/docs/UsersGuide.html#_cursive).
-3. There are now two options
-   1. If you already have a project open, open the project in IntelliJ using _File | New | Project from existing sources..._ and indicating the `pom.xml` file.
-   2. If you're at the welcome screen, press the "Open" button and navigate to the `pom.xml`.
-5. Ensure the project has an SDK configured using _File | Project Structure_, and checking under `Project`.
-7. The project comes with a REPL run configuration called "REPL". Run the REPL using the _Run | Run 'REPL'_ menu item, or the toolbar button.
-8. Run the commands in [Using ClojureScript REPL](#using-clojurescript-repl)
 
 ## Or the Command line
 ```sh
