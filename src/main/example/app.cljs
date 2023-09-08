@@ -52,7 +52,7 @@
        "Using: shadow-cljs+expo+reagent+re-frame"]]
      [:> StatusBar {:style "auto"}]]))
 
-(defn- about 
+(defn- about
   []
   (r/with-let [counter (rf/subscribe [:get-counter])]
     [:> rn/View {:style {:flex 1
@@ -99,6 +99,7 @@
 (defn start
   {:dev/after-load true}
   []
+  (rf/clear-subscription-cache!)
   (expo-root/render-root (r/as-element [root])))
 
 (defn init []
