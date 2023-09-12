@@ -64,6 +64,7 @@ Open Emacs and a bash shell:
 
        WebSocket connected!
        REPL init successful
+   It will open automatically http://localhost:19006/ in the browser
 1. Once you see that the REPL is initalized, you can return to Emacs
    and confirm the REPL is connected and functional:
    ``` clojure
@@ -109,6 +110,14 @@ To test the REPL connection:
 
 ```clojure
 (js/alert "Hello from Repl")
+```
+
+### Run tailwind-native
+
+This project support Tailwindcss if you want to run the `watch` command do this:
+
+```bash
+$ npx tailwindcss -i tailwind.css --postcss postcss.config.js --watch
 ```
 
 ### Command line CLJS REPL
@@ -174,8 +183,6 @@ The steps below provide an example of using EAS Build to build an apk file to ru
 See [the EAS Build docs](https://docs.expo.dev/build/introduction/) for more information.
 
 If you want to use EAS Build with a project not based on this template, see [this PR](https://github.com/PEZ/rn-rf-shadow/pull/24) for information about how your project can be set up to avoid an error during the build process.
-
-Note: The `eas-build-pre-install.sh` script makes EAS install Java in the MacOS environment when running a build for iOS. This ensures that shadow-cljs can be run in the EAS pipeline to build your ClojureScript code.
 
 ## React Navigation included
 

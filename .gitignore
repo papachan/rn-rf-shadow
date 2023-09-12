@@ -16,7 +16,8 @@ app
 /web-build
 .calva/output-window/
 .DS_Store
-
+nativewind-output.js
+yarn-error.log
 .lsp/.cache
 .clj-kondo/.cache
 .lsp/sqlite.db
