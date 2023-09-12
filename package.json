@@ -10,8 +10,7 @@
     "release": "npx shadow-cljs release app",
     "eject": "npx expo eject",
     "eas-build-post-install": "npx shadow-cljs release app",
-    "tailwind:watch": "npx tailwindcss -i tailwind.css --postcss postcss.config.js --watch",
-    "tailwind:release": "npx tailwindcss -i tailwind.css --postcss postcss.config.js --minify"
+    "tailwind:watch": "npx tailwindcss -i tailwind.css --postcss postcss.config.js --watch"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.7",
